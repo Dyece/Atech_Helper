@@ -6,7 +6,7 @@ import java.lang.Exception;
  * Main menu of the aplication
  *
  */
-public class MainFrame extends JFrame
+public class MainFrame extends JDialog
 {
     private Toolkit tk = Toolkit.getDefaultToolkit();
     private int screenDim_X = ((int)tk.getScreenSize().getWidth());
@@ -20,8 +20,11 @@ public class MainFrame extends JFrame
     //J features
     private Icon splashPic;
     private Icon bannerPic;
+    private Icon exitPic;
+    
     private JLabel splash_lbl;
     private JLabel banner_lbl;
+    private JLabel exit_lbl;
     /**
      * Constructor for objects of class MainFrame
      */
@@ -30,38 +33,40 @@ public class MainFrame extends JFrame
         //Frame defaults
         setTitle("Atech Helper");
         setSize(SCREEN_X, SCREEN_Y);
-        setUndecorated(true);
         setLocation(screenDim_X/2 - 450, screenDim_Y/2-250);
 
-        //Creating splashScreen
-        makeSplash();
-        add(splash_lbl);
-        setVisible(true);
-        
-        //remove splash after delay
-        delay(3);
-        splash_lbl.setVisible(false);
-        setVisible(true);
-        
         //Create Base panel
         basePanel.setSize(SCREEN_X, SCREEN_Y);
         basePanel.setLayout(null);
-        basePanel.setBackground(Color.BLUE);
+
         
+        //Creating splashScreen
+        makeSplash();
+
+        //remove splash after delay
+        delay(3);
+        splash_lbl.setVisible(false);
+
+        //
         bannerPic = new ImageIcon(getClass().getResource("Images/banner.png"));
         banner_lbl = new JLabel(bannerPic);
-        banner_lbl.setBounds(900, 40, 200, 200);
+        banner_lbl.setBounds(0, 0, 900, 40);
         
+        exitPic = new ImageIcon(getClass().getResource("Images/exit.png"));
+        exit_lbl = new JLabel(exitPic);
+        exit_lbl.setBounds(860, 0, 40, 40);
         
+        basePanel.add(exit_lbl);
         basePanel.add(banner_lbl);
-       
+        
         //end
         add(basePanel);
-        
+        repaint();
+
         setVisible(true);
         setLocationRelativeTo(null);
     }//end of MainFrame contructor
-    
+
     /*
      * Delay
      * 
@@ -75,19 +80,16 @@ public class MainFrame extends JFrame
         }
         catch(Exception e)
         {
-             splash_lbl.setVisible(false);
+            splash_lbl.setVisible(false);
         }
     }//end of delay method
     
-    /*
-     * makeSplash
-     * 
-     * 
-     */
     public void makeSplash()
     {
         splashPic = new ImageIcon(getClass().getResource("Images/maverick_main.png"));
         splash_lbl = new JLabel(splashPic);
-        splash_lbl.setBounds(500, 500, 500, 500);
-    }//end of makeSplash method
+        splash_lbl.setBounds(0, 0, SCREEN_X, SCREEN_Y);
+        add(splash_lbl);
+        setVisible(true);
+    }
 }
