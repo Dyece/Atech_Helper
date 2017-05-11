@@ -1,9 +1,14 @@
 import javax.swing.*;
 /**
- * Write a description of class Freshmen here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Contains information to help current mavericks of highschool
+ * this may include:
+ * 
+ * -Helpful tips
+ * -What to expect
+ * -Classes
+ * -Teachers
+ * -Tips
+ * 
  */
 public class Freshmen extends JPanel
 {

@@ -1,10 +1,14 @@
 import javax.swing.*;
 
 /**
- * Write a description of class Seniors here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Contains information to help seniors with their senior year
+ * this may include:
+ * 
+ * -Scholarship information
+ * -College Application
+ * -Due dates
+ * -Helpful tips
+ * -What to avoid
  */
 public class Senior extends JPanel
 {
