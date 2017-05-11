@@ -13,7 +13,11 @@ public class MainFrame extends JDialog
     private Toolkit tk = Toolkit.getDefaultToolkit();
     private int screenDim_X = ((int)tk.getScreenSize().getWidth());
     private int screenDim_Y = ((int)tk.getScreenSize().getHeight());
-
+    
+    //Panels
+    private Freshmen feshPanel = new Freshmen();
+    private Senior seniorPanel = new Senior();
+    //J features
     private Icon splashPic;
     private JLabel splash;
     /**
@@ -32,18 +36,21 @@ public class MainFrame extends JDialog
         add(splash);
         
         setVisible(true);
-        System.out.println("CHECKING1");
         
+        //remove splash after delay
         delay(3);
-        
         splash.setVisible(false);
         setVisible(true);
         
         
         
-        System.out.println("CHECKING3");
-    }
+    }//end of MainFrame contructor
     
+    /*
+     * Delay
+     * 
+     * 
+     */
     public void delay(int sec)
     {
         try
@@ -52,14 +59,19 @@ public class MainFrame extends JDialog
         }
         catch(Exception e)
         {
+             splash.setVisible(false);
         }
-        
-    }
+    }//end of delay method
     
+    /*
+     * makeSplash
+     * 
+     * 
+     */
     public void makeSplash()
     {
         splashPic = new ImageIcon(getClass().getResource("maverick_main.png"));
         splash = new JLabel(splashPic);
         splash.setBounds(500, 500, 500, 500);
-    }
+    }//end of makeSplash method
 }
