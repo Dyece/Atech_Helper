@@ -1,21 +1,31 @@
-
+import javax.swing.*;
 /**
  * Write a description of class MainFrame here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MainFrame
+public class MainFrame extends JFrame
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private Icon splashPic;
+    private JLabel splash;
     /**
      * Constructor for objects of class MainFrame
      */
     public MainFrame()
     {
-        System.out.println("TEST");
+        setTitle("Atech Helper");
+        setSize(900, 500);
+        
+        splashPic = new ImageIcon(getClass().getResource("maverick.jpg"));
+        splash = new JLabel(splashPic);
+        splash.setBounds(500, 500, 500, 500);
+        
+        
+        
+        add(splash);
+        
+        setVisible(true);
     }
 
 }
