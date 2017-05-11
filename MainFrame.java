@@ -8,7 +8,7 @@ import java.lang.Exception;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MainFrame extends JDialog
+public class MainFrame extends JFrame
 {
     private Toolkit tk = Toolkit.getDefaultToolkit();
     private int screenDim_X = ((int)tk.getScreenSize().getWidth());
@@ -70,7 +70,7 @@ public class MainFrame extends JDialog
      */
     public void makeSplash()
     {
-        splashPic = new ImageIcon(getClass().getResource("maverick_main.png"));
+        splashPic = new ImageIcon(getClass().getResource("Images/maverick_main.png"));
         splash = new JLabel(splashPic);
         splash.setBounds(500, 500, 500, 500);
     }//end of makeSplash method
