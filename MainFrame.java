@@ -20,11 +20,12 @@ public class MainFrame extends JDialog
     //J features
     private Icon splashPic;
     private Icon bannerPic;
-    private Icon exitPic;
+    private Icon loadinPic;
+    
     
     private JLabel splash_lbl;
+    private JLabel loadin_lbl;
     private JLabel banner_lbl;
-    private JLabel exit_lbl;
     /**
      * Constructor for objects of class MainFrame
      */
@@ -39,26 +40,20 @@ public class MainFrame extends JDialog
         basePanel.setSize(SCREEN_X, SCREEN_Y);
         basePanel.setLayout(null);
 
-        
         //Creating splashScreen
         makeSplash();
 
         //remove splash after delay
         delay(3);
         splash_lbl.setVisible(false);
+        loadin_lbl.setVisible(false);
 
         //
-        bannerPic = new ImageIcon(getClass().getResource("Images/banner.png"));
-        banner_lbl = new JLabel(bannerPic);
-        banner_lbl.setBounds(0, 0, 900, 40);
-        
-        exitPic = new ImageIcon(getClass().getResource("Images/exit.png"));
-        exit_lbl = new JLabel(exitPic);
-        exit_lbl.setBounds(860, 0, 40, 40);
-        
-        basePanel.add(exit_lbl);
+
+        createBasePanel();
+
         basePanel.add(banner_lbl);
-        
+
         //end
         add(basePanel);
         repaint();
@@ -83,13 +78,28 @@ public class MainFrame extends JDialog
             splash_lbl.setVisible(false);
         }
     }//end of delay method
-    
+
     public void makeSplash()
     {
         splashPic = new ImageIcon(getClass().getResource("Images/maverick_main.png"));
         splash_lbl = new JLabel(splashPic);
         splash_lbl.setBounds(0, 0, SCREEN_X, SCREEN_Y);
+
+        loadinPic = new ImageIcon(getClass().getResource("Images/circle_loading.gif"));
+        loadin_lbl = new JLabel(loadinPic);
+        loadin_lbl.setBounds(50, 320, 128, 128);
+
+        add(loadin_lbl);
         add(splash_lbl);
         setVisible(true);
+    }
+    
+    public void createBasePanel()
+    {
+        bannerPic = new ImageIcon(getClass().getResource("Images/banner.png"));
+        banner_lbl = new JLabel(bannerPic);
+        banner_lbl.setBounds(0, 0, 900, 40);
+        
+        
     }
 }
