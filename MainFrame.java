@@ -39,7 +39,6 @@ public class MainFrame extends JDialog
         //Create Base panel
         basePanel.setSize(SCREEN_X, SCREEN_Y);
         basePanel.setLayout(null);
-
         //Creating splashScreen
         makeSplash();
 
