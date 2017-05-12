@@ -10,6 +10,7 @@ import javax.swing.*;
  * -Helpful tips
  * -What to avoid
  */
+// test commnet
 public class Senior extends JPanel
 {
     // instance variables - replace the example below with your own
