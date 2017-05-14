@@ -23,7 +23,7 @@ public class Senior extends JPanel
         setSize(900, 500);
         
         tester = new JLabel("Senior Panel");
-        tester.setBounds(200, 50, 150, 40);
+        tester.setBounds(200, 150, 150, 40);
 
         add(tester);
     }

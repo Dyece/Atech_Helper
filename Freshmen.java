@@ -22,7 +22,7 @@ public class Freshmen extends JPanel
         setLayout(null);
         setSize(900, 500);
         tester = new JLabel("Freshmen Panel");
-        tester.setBounds(200, 50, 150, 40);
+        tester.setBounds(200, 150, 150, 40);
         
         add(tester);
     }

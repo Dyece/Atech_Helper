@@ -31,6 +31,7 @@ public class MainFrame extends JDialog
     
     private JButton fresh_btn;
     private JButton senior_btn;
+    private JButton back_btn;
     /**
      * Constructor for objects of class MainFrame
      */
@@ -52,19 +53,20 @@ public class MainFrame extends JDialog
         //Set basePanel
 
         createBasePanel();
-
-
-        //end
+        //creates the back button that can be used for panels
+        setBackButton();
+        
+        //end: adds everything to the JFrame
         add(freshPanel);
         add(seniorPanel);
         add(basePanel);
+        
         repaint();
-
         setVisible(true);
     }//end of MainFrame contructor
 
     /*
-     * Delay
+     * Delay by "sec" amount of seconds
      * 
      * 
      */
@@ -102,21 +104,23 @@ public class MainFrame extends JDialog
         banner_lbl.setBounds(0, 0, 900, 40);
         
         fresh_btn = new JButton("New Mavericks");
-        fresh_btn.setBounds(200, 150, 130, 40);
+        fresh_btn.setBounds(200, 150, 200, 50);
         fresh_btn.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent evt)
                 {
                     basePanel.setVisible(false);
+                    freshPanel.add(back_btn);
                     freshPanel.setPanelVisible(true);
                 }
             });
         
         senior_btn = new JButton("Seniors");
-        senior_btn.setBounds(400, 150, 130, 40);
+        senior_btn.setBounds(400, 150, 200, 50);
         senior_btn.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent evt)
                 {
                     basePanel.setVisible(false);
+                    seniorPanel.add(back_btn);
                     seniorPanel.setPanelVisible(true);
                 }
             });
@@ -127,6 +131,19 @@ public class MainFrame extends JDialog
         
     }
     
+    public void setBackButton()
+    {
+        back_btn = new JButton("Back");
+        back_btn.setBounds(0, 0, 200, 50);
+        back_btn.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent evt)
+                {
+                    seniorPanel.setPanelVisible(false);
+                    freshPanel.setPanelVisible(false);
+                    basePanel.setVisible(true);
+                }
+            });
+    }
 }
 
 //Possible future use
