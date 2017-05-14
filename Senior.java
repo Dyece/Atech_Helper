@@ -12,15 +12,31 @@ import javax.swing.*;
  */
 public class Senior extends JPanel
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private JLabel tester;
     /**
      * Constructor for objects of class Seniors
      */
     public Senior()
     {
+        setVisible(false);
+        setLayout(null);
+        setSize(900, 500);
         
+        tester = new JLabel("Senior Panel");
+        tester.setBounds(200, 50, 150, 40);
+
+        add(tester);
     }
 
+    public void setPanelVisible(boolean vis)
+    {
+        if(vis)
+        {
+            setVisible(true);
+        }
+        else
+        {
+            setVisible(false);
+        }
+    }
 }

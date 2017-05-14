@@ -4,7 +4,7 @@ import java.awt.event.MouseAdapter;
 import javax.swing.*;
 /*
  * NOT associated with the project
- * class is mainly uses for testing
+ * class is mainly used for testing
  */
 public class LabelHoverTest extends JFrame {
 
