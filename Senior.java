@@ -13,6 +13,9 @@ import javax.swing.*;
 public class Senior extends JPanel
 {
     private JLabel tester;
+
+    private JTextArea info_txt;
+    private JScrollPane scroller;
     /**
      * Constructor for objects of class Seniors
      */
@@ -21,11 +24,18 @@ public class Senior extends JPanel
         setVisible(false);
         setLayout(null);
         setSize(900, 500);
-        
+
         tester = new JLabel("Senior Panel");
         tester.setBounds(200, 150, 150, 40);
 
-        add(tester);
+        info_txt = new JTextArea();
+        info_txt.setText("");
+        info_txt.setEditable(false);
+        scroller = new JScrollPane(info_txt);
+        scroller.setBounds(440, 20, 408, 410);
+
+        add(scroller);
+        add(tester);    
     }
 
     public void setPanelVisible(boolean vis)
